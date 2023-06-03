@@ -1,0 +1,238 @@
+===
+Comments
+===
+
+;
+
+#|
+comment
+|#
+
+#|
+nested
+#|
+comment
+|#
+|#
+
+---
+
+(scheme_program
+  (scheme_comment)
+  (scheme_comment)
+  (scheme_comment))
+
+
+===
+Booleans
+===
+
+#t
+#T
+#tRuE
+#TrUe
+
+#f
+#F
+#fAlSe
+#FaLsE
+
+---
+
+(scheme_program
+  (scheme_boolean)
+  (scheme_boolean)
+  (scheme_boolean)
+  (scheme_boolean)
+  (scheme_boolean)
+  (scheme_boolean)
+  (scheme_boolean)
+  (scheme_boolean))
+
+
+===
+Characters
+===
+
+#\nUl
+#\aLaRm
+#\bAcKsPaCe
+#\tAb
+#\lInEfEeD
+#\NeWlInE
+#\vTaB
+#\pAgE
+#\rEtUrN
+#\eSc
+#\sPaCe
+#\dElEtE
+
+#\sOh
+#\StX
+#\eTx
+#\EoT
+#\eNq
+#\aCk
+#\bEl
+#\Bs
+#\hT
+#\Lf
+#\Vt
+#\fF
+#\cR
+#\sO
+#\Si
+#\dLe
+#\Dc1
+#\dC2
+#\dc3
+#\DC4
+#\nAk
+#\sYn
+#\eTb
+#\CaN
+#\eM
+#\SuB
+#\fS
+#\gS
+#\rS
+#\uS
+#\Sp
+
+#\nl
+#\np
+#\null
+
+#\.
+#\17
+#\x123abc
+#\X789def
+#\)
+
+---
+
+(scheme_program
+  (scheme_character)
+  (scheme_character)
+  (scheme_character)
+  (scheme_character)
+  (scheme_character)
+  (scheme_character)
+  (scheme_character)
+  (scheme_character)
+  (scheme_character)
+  (scheme_character)
+  (scheme_character)
+  (scheme_character)
+
+  (scheme_character)
+  (scheme_character)
+  (scheme_character)
+  (scheme_character)
+  (scheme_character)
+  (scheme_character)
+  (scheme_character)
+  (scheme_character)
+  (scheme_character)
+  (scheme_character)
+  (scheme_character)
+  (scheme_character)
+  (scheme_character)
+  (scheme_character)
+  (scheme_character)
+  (scheme_character)
+  (scheme_character)
+  (scheme_character)
+  (scheme_character)
+  (scheme_character)
+  (scheme_character)
+  (scheme_character)
+  (scheme_character)
+  (scheme_character)
+  (scheme_character)
+  (scheme_character)
+  (scheme_character)
+  (scheme_character)
+  (scheme_character)
+  (scheme_character)
+  (scheme_character)
+
+  (scheme_character)
+  (scheme_character)
+  (scheme_character)
+
+  (scheme_character)
+  (scheme_character)
+  (scheme_character)
+  (scheme_character)
+  (scheme_character))
+
+
+===
+Strings
+===
+
+""
+";x\n;y"
+"shc\neme\""
+
+---
+
+(scheme_program
+  (scheme_string)
+  (scheme_string
+    (scheme_string_fragment)
+    (scheme_escape_sequence)
+    (scheme_string_fragment))
+  (scheme_string
+    (scheme_string_fragment)
+    (scheme_escape_sequence)
+    (scheme_string_fragment)
+    (scheme_escape_sequence)))
+
+
+===
+Embedded LilyPond
+===
+
+#{ \pointAndClickOff #}
+#{ #}
+#{#}
+
+---
+
+(scheme_program
+  (scheme_embedded_lilypond
+    (scheme_embedded_lilypond_text))
+  (scheme_embedded_lilypond
+    (scheme_embedded_lilypond_text))
+  (scheme_embedded_lilypond))
+
+
+===
+Lists
+===
+
+()
+(1 2 3)
+("foo" bar 3.1415)
+(car '(1))
+
+---
+
+(scheme_program
+  (scheme_list)
+  (scheme_list
+    (scheme_number)
+    (scheme_number)
+    (scheme_number))
+  (scheme_list
+    (scheme_string
+      (scheme_string_fragment))
+    (scheme_symbol)
+    (scheme_number))
+  (scheme_list
+    (scheme_symbol)
+    (scheme_quote
+      (scheme_list
+        (scheme_number)))))
