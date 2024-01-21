@@ -5,5 +5,15 @@
   "devDependencies": {
     "tree-sitter-cli": "^0.20.7"
   },
-  "main": "bindings/node"
+  "main": "bindings/node",
+  "tree-sitter": [
+    {
+      "scope": "source.lilypond_scheme",
+      "highlights": [
+        "queries/highlights-builtins.scm",
+        "queries/highlights-lilypond-builtins.scm",
+        "queries/highlights.scm"
+      ]
+    }
+  ]
 }
