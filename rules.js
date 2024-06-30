@@ -197,7 +197,7 @@ module.exports = {
 
   scheme_vector: $ => seq('#(', repeat($._scheme_token), ')'),
 
-  scheme_byte_vector: $ => seq('#vu8(', repeat($._scheme_token), ')'),
+  scheme_byte_vector: $ => seq('#vu8(', repeat($._scheme_token), ')')
 };
 
 function symbol() {
