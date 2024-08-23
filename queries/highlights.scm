@@ -37,4 +37,4 @@
 [
   "(" ")"
   "#{" "#}"
-] @bracket
+] @punctuation.bracket
