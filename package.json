@@ -1,4 +1,29 @@
 {
+  "name": "tree-sitter-lilypond-scheme",
+  "main": "bindings/node",
+  "types": "bindings/node",
+  "version": "0.0.0",
+  "description": "LilyPond Scheme grammar for node-tree-sitter",
+  "keywords": [
+    "lilypond",
+    "scheme",
+    "parser",
+    "lexer"
+  ],
+  "files": [
+    "grammar.js",
+    "binding.gyp",
+    "prebuilds/**",
+    "bindings/node/*",
+    "queries/*",
+    "src/**"
+  ],
+  "author": {
+    "name": "Nathan Whetsell",
+    "email": "nathan.whetsell@gmail.com"
+  },
+  "repository": "https://github.com/nwhetsell/tree-sitter-lilypond-scheme.git",
+  "license": "MIT",
   "dependencies": {
     "node-addon-api": "^7.1.0",
     "node-gyp-build": "^4.8.0"
@@ -15,30 +40,10 @@
     "prebuildify": "^6.0.0",
     "tree-sitter-cli": "^0.24.1"
   },
-  "main": "bindings/node",
-  "types": "bindings/node",
-  "tree-sitter": [
-    {
-      "scope": "source.lilypond_scheme",
-      "highlights": [
-        "queries/highlights-builtins.scm",
-        "queries/highlights-lilypond-builtins.scm",
-        "queries/highlights.scm"
-      ]
-    }
-  ],
   "scripts": {
     "install": "node-gyp-build",
     "prestart": "tree-sitter build --wasm",
     "start": "tree-sitter playground",
     "test": "node --test bindings/node/*_test.js"
-  },
-  "files": [
-    "grammar.js",
-    "binding.gyp",
-    "prebuilds/**",
-    "bindings/node/*",
-    "queries/*",
-    "src/**"
-  ]
+  }
 }
