@@ -4,7 +4,7 @@ import pygments.lexers._scheme_builtins as _scheme_builtins
 import re
 from textwrap import dedent
 
-with open('highlights-builtins.scm', 'w') as file:
+with open('queries/highlights-builtins.scm', 'w') as file:
     regex = re.sub(r'\\(.)', r'\\\\\1', regex_opt(_scheme_builtins.scheme_keywords, '^', '$').replace('\\-', '-'))
     file.write(dedent(f'''\
     (
@@ -24,7 +24,7 @@ with open('highlights-builtins.scm', 'w') as file:
     )
     '''))
 
-with open('highlights-lilypond-builtins.scm', 'w') as file:
+with open('queries/highlights-lilypond-builtins.scm', 'w') as file:
     regex = re.sub(r'\\(.)', r'\\\\\1', regex_opt(_lilypond_builtins.scheme_functions, '^', '$').replace('\\-', '-'))
     file.write(dedent(f'''\
     (
