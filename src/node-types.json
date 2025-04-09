@@ -91,9 +91,28 @@
     }
   },
   {
-    "type": "scheme_embedded_lilypond_text",
+    "type": "scheme_embedded_lilypond_fragment",
     "named": true,
     "fields": {}
+  },
+  {
+    "type": "scheme_embedded_lilypond_text",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "scheme_embedded_lilypond",
+          "named": true
+        },
+        {
+          "type": "scheme_embedded_lilypond_fragment",
+          "named": true
+        }
+      ]
+    }
   },
   {
     "type": "scheme_keyword",

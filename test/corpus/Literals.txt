@@ -198,15 +198,24 @@ Embedded LilyPond
 #{ \pointAndClickOff #}
 #{ #}
 #{#}
+#{ #(begin #{ \pointAndClickOff #}) #}
 
 ---
 
 (scheme_program
   (scheme_embedded_lilypond
-    (scheme_embedded_lilypond_text))
+      (scheme_embedded_lilypond_text
+          (scheme_embedded_lilypond_fragment)))
+  (scheme_embedded_lilypond)
+  (scheme_embedded_lilypond)
   (scheme_embedded_lilypond
-    (scheme_embedded_lilypond_text))
-  (scheme_embedded_lilypond))
+      (scheme_embedded_lilypond_text
+          (scheme_embedded_lilypond_fragment)
+          (scheme_embedded_lilypond_fragment)
+          (scheme_embedded_lilypond
+            (scheme_embedded_lilypond_text
+              (scheme_embedded_lilypond_fragment)))
+          (scheme_embedded_lilypond_fragment))))
 
 
 ===

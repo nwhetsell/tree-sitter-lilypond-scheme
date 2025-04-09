@@ -13,6 +13,12 @@ module.exports = grammar({
     rules,
 
     {
+
+      scheme_embedded_lilypond_fragment: $ => choice(
+        /[^#\s]+/,
+        /#[^}]/
+      ),
+
       scheme_embedded_lilypond: $ => seq(
         '#{',
         optional($.scheme_embedded_lilypond_text),
@@ -20,8 +26,8 @@ module.exports = grammar({
       ),
 
       scheme_embedded_lilypond_text: $ => repeat1(choice(
-        /[^#]+/,
-        /#[^}]/
+        $.scheme_embedded_lilypond_fragment,
+        $.scheme_embedded_lilypond
       ))
     }
   )
