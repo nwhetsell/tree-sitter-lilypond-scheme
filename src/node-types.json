@@ -120,7 +120,7 @@
     "fields": {},
     "children": {
       "multiple": true,
-      "required": false,
+      "required": true,
       "types": [
         {
           "type": "lilypond_comment",
@@ -133,9 +133,18 @@
         {
           "type": "scheme_embedded_lilypond",
           "named": true
+        },
+        {
+          "type": "scheme_embedded_lilypond_text_fragment",
+          "named": true
         }
       ]
     }
+  },
+  {
+    "type": "scheme_embedded_lilypond_text_fragment",
+    "named": true,
+    "fields": {}
   },
   {
     "type": "scheme_keyword",

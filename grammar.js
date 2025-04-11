@@ -3,6 +3,10 @@ const rules = require('./rules.js');
 module.exports = grammar({
   name: 'lilypond_scheme',
 
+  conflicts: $ => [
+    [$.scheme_embedded_lilypond_text_fragment]
+  ],
+
   rules: Object.assign(
     {
       scheme_program: $ => repeat(
@@ -23,14 +27,12 @@ module.exports = grammar({
         $.lilypond_comment,
         $.lilypond_string,
         $.scheme_embedded_lilypond,
-
-        // We don’t match spaces here because they should be handled by this
-        // grammar’s extras, which by default accepts whitespace; see
-        // https://tree-sitter.github.io/tree-sitter/creating-parsers/2-the-grammar-dsl.html
-        /[^#\s]+/,
-
-        /#[^}]/
+        $.scheme_embedded_lilypond_text_fragment
       )),
+
+      scheme_embedded_lilypond_text_fragment: $ => repeat1(
+        token(choice(/[^"#%\s]+/, /#[^{}]/))
+      ),
 
       // These comment and string rules need to be kept in sync with the
       // analogous rules in https://github.com/nwhetsell/tree-sitter-lilypond.

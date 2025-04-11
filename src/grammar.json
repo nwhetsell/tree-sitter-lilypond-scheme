@@ -3823,14 +3823,29 @@
             "name": "scheme_embedded_lilypond"
           },
           {
-            "type": "PATTERN",
-            "value": "[^#\\s]+"
-          },
-          {
-            "type": "PATTERN",
-            "value": "#[^}]"
+            "type": "SYMBOL",
+            "name": "scheme_embedded_lilypond_text_fragment"
           }
         ]
+      }
+    },
+    "scheme_embedded_lilypond_text_fragment": {
+      "type": "REPEAT1",
+      "content": {
+        "type": "TOKEN",
+        "content": {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "PATTERN",
+              "value": "[^\"#%\\s]+"
+            },
+            {
+              "type": "PATTERN",
+              "value": "#[^{}]"
+            }
+          ]
+        }
       }
     },
     "lilypond_comment": {
@@ -3951,7 +3966,11 @@
       "value": "\\s"
     }
   ],
-  "conflicts": [],
+  "conflicts": [
+    [
+      "scheme_embedded_lilypond_text_fragment"
+    ]
+  ],
   "precedences": [],
   "externals": [],
   "inline": [],

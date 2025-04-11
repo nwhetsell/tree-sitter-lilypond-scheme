@@ -204,16 +204,18 @@ Embedded LilyPond
 #{ "#}\"" #}
 (define foo (define-event-function (music)(ly:music?)
   #{
+    % comment
     bar = #(define-event-function (more-music)(ly:music?)
       #{ \tweak something ##t $more-music #})
-    \tweak something-else $music
+    \tweak something-else "baz" $music
   #}))
 
 ---
 
 (scheme_program
   (scheme_embedded_lilypond
-    (scheme_embedded_lilypond_text))
+    (scheme_embedded_lilypond_text
+      (scheme_embedded_lilypond_text_fragment)))
   (scheme_embedded_lilypond)
   (scheme_embedded_lilypond)
   (scheme_embedded_lilypond
@@ -235,8 +237,15 @@ Embedded LilyPond
         (scheme_symbol))
       (scheme_embedded_lilypond
         (scheme_embedded_lilypond_text
+          (lilypond_comment)
+          (scheme_embedded_lilypond_text_fragment)
           (scheme_embedded_lilypond
-            (scheme_embedded_lilypond_text)))))))
+            (scheme_embedded_lilypond_text
+              (scheme_embedded_lilypond_text_fragment)))
+          (scheme_embedded_lilypond_text_fragment)
+          (lilypond_string
+            (lilypond_string_fragment))
+          (scheme_embedded_lilypond_text_fragment))))))
 
 
 ===
