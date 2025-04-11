@@ -30,9 +30,10 @@ module.exports = grammar({
         $.scheme_embedded_lilypond_text_fragment
       )),
 
-      scheme_embedded_lilypond_text_fragment: $ => repeat1(
-        token(choice(/[^"#%\s]+/, /#[^{}]/))
-      ),
+      scheme_embedded_lilypond_text_fragment: $ => repeat1(token(choice(
+        /[^"#%\s]+/,
+        /#[^{}]/
+      ))),
 
       // These comment and string rules need to be kept in sync with the
       // analogous rules in https://github.com/nwhetsell/tree-sitter-lilypond.
