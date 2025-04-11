@@ -1,5 +1,29 @@
 [
   {
+    "type": "lilypond_string",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "lilypond_escape_sequence",
+          "named": true
+        },
+        {
+          "type": "lilypond_string_fragment",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "lilypond_string_fragment",
+    "named": true,
+    "fields": {}
+  },
+  {
     "type": "scheme_byte_vector",
     "named": true,
     "fields": {},
@@ -93,7 +117,25 @@
   {
     "type": "scheme_embedded_lilypond_text",
     "named": true,
-    "fields": {}
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "lilypond_comment",
+          "named": true
+        },
+        {
+          "type": "lilypond_string",
+          "named": true
+        },
+        {
+          "type": "scheme_embedded_lilypond",
+          "named": true
+        }
+      ]
+    }
   },
   {
     "type": "scheme_keyword",
@@ -420,6 +462,11 @@
     }
   },
   {
+    "type": "scheme_string_fragment",
+    "named": true,
+    "fields": {}
+  },
+  {
     "type": "scheme_unquote",
     "named": true,
     "fields": {},
@@ -685,6 +732,14 @@
     "named": false
   },
   {
+    "type": "lilypond_comment",
+    "named": true
+  },
+  {
+    "type": "lilypond_escape_sequence",
+    "named": true
+  },
+  {
     "type": "scheme_boolean",
     "named": true
   },
@@ -698,10 +753,6 @@
   },
   {
     "type": "scheme_keyword_name",
-    "named": true
-  },
-  {
-    "type": "scheme_string_fragment",
     "named": true
   },
   {
